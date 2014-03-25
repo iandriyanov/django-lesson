@@ -11,8 +11,13 @@ def basic(request):
     args['gender'] = "Пол не выбран"
     _lcsrf = RequestContext(request)
     if request.POST:
-        gender = request.POST.get('sex', '')
-        args['gender'] = request.POST.get('sex', '')
-        return render_to_response('basic.html', args, context_instance=_lcsrf)
+        if "meminfo" in request.POST.get('sys', ''):
+            import os
+            args['gender'] = os.listdir("./")
+            return render_to_response('basic.html', args, context_instance=_lcsrf)
+        else:
+            gender = request.POST.get('sex', '')
+            args['gender'] = request.POST.get('sex', '')
+            return render_to_response('basic.html', args, context_instance=_lcsrf)
 
     return render_to_response('basic.html', args, context_instance=_lcsrf)
