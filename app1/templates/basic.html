@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form action="/app1/" method='post'>
+        {% csrf_token %}
+        <input type="radio" name="sex" value="male">Male<br/>
+        <input type="radio" name="sex" value="female">Female<br/>
+        
+        <p><input type="submit" value="Submit"></p>
+    </form>
+
+    <p> Ваш пол: {{ gender }}</p>
+</body>
+</html>
