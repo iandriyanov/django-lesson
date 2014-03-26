@@ -1,0 +1,13 @@
+<form action="/app1/test/" method='post'> {% csrf_token %}
+    {% for choice in form.my_choice_field.field.choices %}
+        <p><input type="radio" name="my_choice_field" value="{{choice.0}}"
+            {% ifequal form.my_choice_field.data choice.0 %}
+                checked="checked"
+            {% endifequal %} />
+            
+            <label for="">{{choice.1}}</label>
+    {% endfor %}
+    <p><input type="submit" value="Submit"></p>
+    <hr/>
+    <p>{{text}}</p>
+</form>

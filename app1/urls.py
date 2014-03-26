@@ -8,7 +8,7 @@
 #
 # Creation Date : 25-03-2014
 #
-# Last Modified : Tue 25 Mar 2014 01:07:04 PM MSK
+# Last Modified : Wed 26 Mar 2014 07:58:40 PM MSK
 #
 # Created By : plushka
 #
@@ -25,4 +25,5 @@ urlpatterns = patterns('',
 
                        url(r'^app1/basic/$', 'app1.views.basic'),
                        url(r'^app1/basic2/$', 'app1.views.basic2'),
+                       url(r'^app1/test/$', 'app1.views.my_view'),
                        )
