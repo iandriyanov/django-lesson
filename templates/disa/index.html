@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+
+{% block body %}
+{% include 'header.html' %}
+
+<!-- Main Page Content and Sidebar -->                                            
+<div class="row">
+    {% include 'aside.html' %}
+    {% include 'mainside.html' %}
+</div>
+<!-- End Main Content and Sidebar -->
+
+{% include 'footer.html' %}
+{% endblock %}

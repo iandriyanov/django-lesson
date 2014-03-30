@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block main %}
+<div class="large-10 columns">
+    <h3><center> {{ name_page }} </center></h3>
+    <!-- ТОже из базы взависимости какие функции по страницам -->
+    <h6><center><a href="/srv_info/">On Info page</a> | <a href="/srv_info/detail/">Detail Info</a> | <a href="/srv_info/chulan">Chulan</a></center></h6>
+    <!-- Здесь название и что делает команда из базы и программы -->
+    <h6><i> {{ desc_page }} </i></h6>
+    <div class="large-12 columns">
+        <!-- Тут текст на страницу -->
+        <ul class="disc">
+            <p><li>Server name: &laquo;{{ hostname }}&raquo;</li></p>
+            <p><li>Complite system info:</li>
+            <ul class="circle">
+                <li>Server uptime: {{ uptime }}</li>
+                <li>OS version: {{ sysname }}</li>
+                <li>Release version: {{ relver }}</li>
+                <li>Architecture: {{ archver }}</li>
+            </ul></p>
+        </ul>
+    </div>
+
+
+</div>
+{% endblock %}

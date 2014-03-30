@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+<head>
+    <title> {{ site_title }}</title>
+    <meta>
+    <link rel="stylesheet" type="text/css" href="{% static "static/css/foundation.css" %}">
+</head>
+<body>
+
+    <h1><a href="/">Django server-admin</a></h1>
+    <hr />
+
+    <div class="large-2 columns panel">
+        <h5> {{menu_name}}: </h5>
+        <hr/>
+        <!-- Здесь надо цикл -->
+        <li><a href="/">Главная</a></li>
+        <br/>
+        <li><a href="/srv_info/">О сервере</a></li>
+        <br/>
+        <li><a href="/exp/">Эксперементариум</a></li>
+    </div>
+
+    {% block main %}{% endblock %}    
+
+</body>
+</html>

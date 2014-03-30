@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block main %}
+<div class="large-10 columns">
+    <h3><center> {{ name_page }} </center></h3>
+    <!-- ТОже из базы взависимости какие функции по страницам -->
+    <h6><center><a href="/srv_info/">On Info page</a> | <a href="/srv_info/detail/">Detail Info</a> | <a href="/srv_info/chulan">Chulan</a></center></h6>
+    <!-- Здесь название и что делает команда из базы и программы -->
+    <h6><i> {{ desc_page }} </i></h6>
+    <div class="large-12 columns">
+        <!-- Тут текст на страницу -->
+        <div class='large-3 columns'>
+        <form action='/srv_info/detail/' method='post'>
+            {% csrf_token %}
+            <select name="system_ddlist">
+                <option value="mem">Memory info</option>
+                <option value="proc">Processor info</option>
+                <option value="disk">Disk info</option> 
+            </select>
+            <p><input type="submit" value="Отправить">
+        </form>
+        </div>
+        <div class='large-9 columns'>
+            Result:
+            <hr />
+            <br />
+            <p>{{ flash_info }}</p>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
